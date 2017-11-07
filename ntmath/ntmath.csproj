@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2C7BC54-007E-417D-AE53-B102A74CB708}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ntmath</RootNamespace>
+    <AssemblyName>ntmath</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Combinatorics.cs" />
+    <Compile Include="comparers\CustomComparer.cs" />
+    <Compile Include="comparers\GeneralComparer.cs" />
+    <Compile Include="Complex.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="core\compatibility\Lazy.cs" />
+    <Compile Include="core\compatibility\Tuple.cs" />
+    <Compile Include="core\exceptions\DimensionMismatchException.cs" />
+    <Compile Include="decompositions\base\ISolverMatrixDecomposition.cs" />
+    <Compile Include="decompositions\SingularValueDecomposition.cs" />
+    <Compile Include="formats\base\IMatrixFormatProvider.cs" />
+    <Compile Include="formats\base\MatrixFormatProviderBase.cs" />
+    <Compile Include="formats\base\MatrixFormatter.cs" />
+    <Compile Include="formats\DefaultArrayFormatProvider.cs" />
+    <Compile Include="formats\DefaultMatrixFormatProvider.cs" />
+    <Compile Include="matrix\Algebra.cs" />
+    <Compile Include="matrix\Common.cs" />
+    <Compile Include="matrix\Construction.cs" />
+    <Compile Include="matrix\Conversions.cs" />
+    <Compile Include="matrix\Parsing.cs" />
+    <Compile Include="matrix\Selection.cs" />
+    <Compile Include="matrix\Sort.cs" />
+    <Compile Include="matrix\Submatrix.cs" />
+    <Compile Include="algebra\PolyRoots.cs" />
+    <Compile Include="matrix\Swap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="statistics\Arma.cs" />
+    <Compile Include="statistics\Covariance.cs" />
+    <Compile Include="statistics\filters\EKalman.cs" />
+    <Compile Include="statistics\filters\Kalman.cs" />
+    <Compile Include="statistics\models\ARMAModel.cs" />
+    <Compile Include="statistics\models\TimeSeries.cs" />
+    <Compile Include="statistics\models\TimeSeriesModel.cs" />
+    <Compile Include="Tools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gpu\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
